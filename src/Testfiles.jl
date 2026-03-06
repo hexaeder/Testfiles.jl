@@ -49,7 +49,7 @@ macro testfile(filename_ex)
         if Test.get_testset() == Test.FallbackTestSet() # not in testset
             $test_expr
         else # in nested testset
-            printname = rpad(string("Run ", $(name), ".jl..."), 30)
+            printname = rpad(string("Run ", $(name), ".jl..."), 45)
             printstyled(printname; color=:blue, bold=true)
             c = IOCapture.capture(; rethrow=Any, color=true) do
                 $test_expr
